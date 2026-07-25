@@ -15,13 +15,13 @@ export default function Dashboard({prediction}) {
     {
         return null
     }
-
+    const API_URL=process.env.NEXT_PUBLIC_API_URL;
     const [data,setdata] = useState([]);
     const best_prediction=prediction.best_model
     useEffect(()=>{
         async function fetchImportances()
         {
-            const  response=await fetch("http://127.0.0.1:5000/data-feature-importance")
+            const  response=await fetch( `${API_URL}/data-feature-importance`)
             const json = await response.json()
             setdata(json)
         }

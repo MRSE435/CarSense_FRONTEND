@@ -36,14 +36,14 @@ export default function Normalform({setprediction}) {
     const [CarNameOptions,setCarNameOptions] = useState([])
     const [ModelOptions,setModelOptions] = useState([])
 
-
+   const API_URL=process.env.NEXT_PUBLIC_API_URL;
     useEffect(() => {
         async function fetchInitialData() {
             try {
 
-                const brandRes = await fetch("http://127.0.0.1:5000/data-brand_names")
-                const carRes = await fetch("http://127.0.0.1:5000/data-car_names")
-                const modelRes=await fetch("http://127.0.0.1:5000/data-model_names")
+                const brandRes = await fetch(`${API_URL}/data-brand_names`)
+                const carRes = await fetch( `${API_URL}/data-car_names`)
+                const modelRes=await fetch(`${API_URL}/data-model_names` )
 
                 if (brandRes.ok) setBrandOptions(await brandRes.json())
                 if (carRes.ok) setCarNameOptions(await carRes.json())
@@ -74,7 +74,7 @@ export default function Normalform({setprediction}) {
         };
 
         try {
-            const res = await fetch("http://127.0.0.1:5000/predict", {
+            const res = await fetch( `${API_URL}/predict`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)

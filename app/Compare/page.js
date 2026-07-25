@@ -23,9 +23,9 @@ export default function Compare() {
     const [featureImportance, setFeatureImportance] = useState([]);
     // const [selectitem,setselectitem] = useState(false);
 
-
+    const API_URL=process.env.NEXT_PUBLIC_API_URL;
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/data-pricecomparison")
+        fetch(`${API_URL}/data-pricecomparison`)
             .then(res => res.json())
             .then(data => {
                 setpricedata(data)
@@ -42,7 +42,7 @@ export default function Compare() {
 
     // use effect for model comparison table
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/data-tabledata")
+        fetch( `${API_URL}/data-tabledata`)
             .then(res => res.json())
             .then(data => {
                 setModels(data.models)
@@ -52,7 +52,7 @@ export default function Compare() {
 
 
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/data-feature-importance")
+        fetch( `${API_URL}/data-feature-importance`)
             .then(res => res.json())
             .then(data => {
                     setFeatureImportance(data)
