@@ -8,17 +8,24 @@ import Cube from "../components/Svgfolder/Cube";
 import TrendingUp from "../components/Svgfolder/TrendingUp";
 import TargetIcon from "../components/Svgfolder/TargetIcon";
 import Lightning from "../components/Svgfolder/Lightning";
-
+import Brain from "../components/Svgfolder/Brain";
+import Search from "../components/Svgfolder/Search";
+import  Mission from "../components/Svgfolder/Mission";
+import Vision from "../components/Svgfolder/Vision";
 export default function About() {
     return (
         <>
             <Navbar/>
             <main className="flex flex-col lg:min-h-screen">
-                <section className="herosection flex w-screen  h-[40vh] bg-red-500">
+                <section className="herosection flex flex-col lg:flex-row w-screen  lg:h-[40vh] bg-[#0F1021] text-white">
                     <div className="herotextsection flex flex-col flex-1 p-8 gap-4 ">
                         <div className="flex flex-col gap-4">
                             <h1 className="text-2xl">ABOUT CARSENSE</h1>
-                            <h1 className="font-extrabold text-[clamp(1.5rem,10vw,5rem)]  ">About CarSense</h1>
+                            <div className="herotextholder flex gap-8">
+                                <h1 className="font-extrabold text-[clamp(1.5rem,10vw,5rem)]  ">About</h1>
+                                <h1 className="font-extrabold text-[clamp(1.5rem,10vw,5rem)]  text-[#8B5CF6]"> CarSense</h1>
+                            </div>
+
                             <div className="gap-4">
                                 <h1>CarSense is an AI-powered car price prediction platform that</h1>
                                 <h1>helps you estiate fair market price of used cars usng</h1>
@@ -30,7 +37,7 @@ export default function About() {
                         </div>
 
                     </div>
-                    <div className="carimage flex  flex-1 bg-blue-900">
+                    <div className="carimage flex  flex-1  bg-[#0F1021]">
                         <img
                             src="/car.png"
                             alt="Car"
@@ -42,10 +49,10 @@ export default function About() {
 
                 </section>
 
-                <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr p-4 bg-black gap-4 ">
+                <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr p-4 bg-[#0F1021] gap-4 ">
 
 
-                    <div className=" card-1 bg-[#161622] text-white ">
+                    <div className=" card-1 bg-[#161622] text-white rounded-xl">
                         <div className="border rounded-xl  border-[#2A2D4F] p-4 flex  flex-col gap-4">
                             <div className="flex gap-8">
                                 <div
@@ -72,20 +79,20 @@ export default function About() {
                     </div>
 
 
-                    <div className=" card-1 bg-[#161622] text-white ">
+                    <div className=" card-1 bg-[#161622] text-white rounded-xl">
                         <div className="border rounded-xl  border-[#2A2D4F] p-4 flex  flex-col gap-4">
                             <div className="flex gap-8">
                                 <div
                                     className="bg-[#0F1220] h-fit rounded-full shadow-lg border p-2 border-[#5A42C8] shrink-0">
-                                    <Database className=" w-20 h-20 text-[#3C0366]"/>
+                                    <Brain className=" w-20 h-20 text-[#3C0366]"/>
                                 </div>
                                 <div className="flex flex-col gap-2 ">
-                                    <h1 className="text-2xl ">High Quality Data</h1>
+                                    <h1 className="text-2xl ">ML Models Compared</h1>
                                     <p>
-                                        Trained on 10,000+ real<br/>
-                                        car records with accurate<br/>
-                                        and up-to-date market<br/>
-                                        information
+                                        Evaluate and compare 5<br/>
+                                        regression models to find<br/>
+                                        the one that performs<br/>
+                                        the best.
 
                                     </p>
 
@@ -99,20 +106,20 @@ export default function About() {
                     </div>
 
 
-                    <div className=" card-1 bg-[#161622] text-white ">
+                    <div className=" card-1 bg-[#161622] text-white rounded-xl">
                         <div className="border rounded-xl  border-[#2A2D4F] p-4 flex  flex-col gap-4">
                             <div className="flex gap-8">
                                 <div
                                     className="bg-[#0F1220] h-fit rounded-full shadow-lg border p-2 border-[#5A42C8] shrink-0">
-                                    <Database className=" w-20 h-20 text-[#3C0366]"/>
+                                    <TrendingUp className=" w-20 h-20 text-[#3C0366]"/>
                                 </div>
                                 <div className="flex flex-col gap-2 ">
-                                    <h1 className="text-2xl ">High Quality Data</h1>
+                                    <h1 className="text-2xl ">Accurate Predictions</h1>
                                     <p>
-                                        Trained on 10,000+ real<br/>
-                                        car records with accurate<br/>
-                                        and up-to-date market<br/>
-                                        information
+                                        Get reliable price<br/>
+                                        predictions with the best<br/>
+                                        model achieving high<br/>
+                                        accuracy
 
                                     </p>
 
@@ -126,20 +133,20 @@ export default function About() {
                     </div>
 
 
-                    <div className=" card-1 bg-[#161622] text-white ">
+                    <div className=" card-1 bg-[#161622] text-white  rounded-xl">
                         <div className="border rounded-xl  border-[#2A2D4F] p-4 flex  flex-col gap-4">
                             <div className="flex gap-8">
                                 <div
                                     className="bg-[#0F1220] h-fit rounded-full shadow-lg border p-2 border-[#5A42C8] shrink-0">
-                                    <Database className=" w-20 h-20 text-[#3C0366]"/>
+                                    <Search className=" w-20 h-20 text-[#3C0366]"/>
                                 </div>
                                 <div className="flex flex-col gap-2 ">
-                                    <h1 className="text-2xl ">High Quality Data</h1>
+                                    <h1 className="text-2xl ">Insightfull Analysis</h1>
                                     <p>
-                                        Trained on 10,000+ real<br/>
-                                        car records with accurate<br/>
-                                        and up-to-date market<br/>
-                                        information
+                                        Vizualize feature<br/>
+                                        importance and key<br/>
+                                        factors that influence<br/>
+                                        car prices.
 
                                     </p>
 
@@ -156,23 +163,23 @@ export default function About() {
                 </section>
 
 
-                <section className="third-section bg-black flex flex-col  lg:flex-row  p-4 gap-4">
+                <section className="third-section bg-[#0F1021] flex flex-col  lg:flex-row  p-4 gap-4  ">
                     <div
-                        className="left-grid flex-1  grid grid-cols-1 sm:grid-cols-2  auto-rows-fr  flex-1 border-[#2A2D4F] divide-y sm:divide-x sm:divide-y-0">
-                        <div className=" card-1 bg-[#161622] text-white rounded-l-xl   ">
+                        className="left-grid flex-1  grid grid-cols-1 sm:grid-cols-2  auto-rows-fr  flex-1 border border-[#2A2D4F] rounded-xl divide-y sm:divide-x sm:divide-y-0 ">
+                        <div className=" card-1 bg-[#161622] text-white  rounded-l-xl  ">
                             <div className=" p-4 flex  flex-col gap-4">
                                 <div className="flex gap-8">
                                     <div
                                         className="bg-[#0F1220] h-fit rounded-full shadow-lg border p-2 border-[#5A42C8] shrink-0">
-                                        <Database className=" w-10 h-10 text-[#3C0366]"/>
+                                        <Mission className=" w-10 h-10 text-[#3C0366]"/>
                                     </div>
                                     <div className="flex flex-col gap-2 ">
                                         <h1 className="text-2xl ">Our Mission</h1>
                                         <p>
-                                            Trained on 10,000+ real<br/>
-                                            car records with accurate<br/>
-                                            and up-to-date market<br/>
-                                            information
+                                            To make used car price<br/>
+                                            estimation simple,transparent,<br/>
+                                            and data-driven using<br/>
+                                            machine learning.
 
                                         </p>
 
@@ -186,20 +193,20 @@ export default function About() {
                         </div>
 
 
-                        <div className=" card-1 bg-[#161622] text-white  rounded-r-xl">
+                        <div className=" card-1 bg-[#161622] text-white rounded-r-xl ">
                             <div className=" p-4 flex  flex-col gap-4">
                                 <div className="flex gap-8">
                                     <div
                                         className="bg-[#0F1220] h-fit rounded-full shadow-lg border p-2 border-[#5A42C8] shrink-0">
-                                        <Database className=" w-10 h-10 text-[#3C0366]"/>
+                                        <Vision className=" w-10 h-10 text-[#3C0366]"/>
                                     </div>
                                     <div className="flex flex-col gap-2 ">
                                         <h1 className="text-2xl ">Our Vision</h1>
                                         <p>
-                                            Trained on 10,000+ real<br/>
-                                            car records with accurate<br/>
-                                            and up-to-date market<br/>
-                                            information
+                                            To become the most trusted<br/>
+                                            platform for car price<br/>
+                                            intelligence using AI and<br/>
+                                            real-world market data.
 
                                         </p>
 
@@ -214,7 +221,7 @@ export default function About() {
 
 
                     </div>
-                    <div className="right-grid flex flex-col flex-2 bg-red-600 min-h-400px p-4 ">
+                    <div className="right-grid flex flex-col flex-2 bg-[#161622] min-h-400px p-4  rounded-xl border border-[#2A2D4F]">
 
                         <h1>Tech Stack</h1>
                         <div
@@ -358,7 +365,7 @@ export default function About() {
 
                 </section>
                 <section>
-                    <div className="model-wrapper-toolbar flex flex-col gap-2 p-4 ">
+                    <div className="model-wrapper-toolbar flex flex-col gap-2 p-4  bg-[#0F1021]">
 
                         <div className="best-performing-model  text-white flex flex-col lg:flex-row bg-[#17182E] hover:bg-[#1C1E37]   border
     border-[#5A42C8]
@@ -447,12 +454,12 @@ lg:divide-x">
                 </section>
 
 
-                <section className="aboutdevelopersection w-full bg-green-700 p-4">
-                    <div className="wrapperdiv bg-[#161622] flex flex-col lg:flex-row border   border-[#5A42C8] p-4 justify-center items-center">
+                <section className="aboutdevelopersection w-full bg-[#0F1021] p-4">
+                    <div className="wrapperdiv bg-[#161622] flex flex-col lg:flex-row border   border-[#5A42C8] p-4 justify-center items-center gap-4 rounded-xl">
                         <div className="left flex gap-8 flex-2">
                             <div
                                 className="nameinitials bg-[#8B5CF6] min-w-0 p-2 h-fit rounded-full   w-12 h-12 md:w-14 md:h-14  lg:w-16 lg:h-16">
-                                <p className="text-2xl font-bold text-[#C4B5FD] self-center">MO</p>
+                                <p className=" text-xs sm:text-2xl font-bold text-[#C4B5FD] self-center">MO</p>
                             </div>
                             <div className="textdiv flex flex-col gap-2 text-white">
                                 <h1 className="text-white font-extrabold">Mohammed Owais</h1>
