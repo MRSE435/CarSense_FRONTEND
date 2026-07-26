@@ -156,7 +156,7 @@ export default function About() {
                 </section>
 
 
-                <section className="third-section bg-black flex p-4 gap-4">
+                <section className="third-section bg-black flex flex-col  lg:flex-row  p-4 gap-4">
                     <div
                         className="left-grid flex-1  grid grid-cols-1 sm:grid-cols-2  auto-rows-fr  flex-1 border-[#2A2D4F] divide-y sm:divide-x sm:divide-y-0">
                         <div className=" card-1 bg-[#161622] text-white rounded-l-xl   ">
@@ -214,11 +214,11 @@ export default function About() {
 
 
                     </div>
-                    <div className="right-grid flex flex-col flex-2 bg-red-600 min-h-400px ">
+                    <div className="right-grid flex flex-col flex-2 bg-red-600 min-h-400px p-4 ">
 
                         <h1>Tech Stack</h1>
                         <div
-                            className="techstakwrapperdiv grid grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_2fr] divide-y lg:devide-y-0 lg:divide-x">
+                            className="techstakwrapperdiv grid grid-cols-[1fr] lg:grid-cols-[1fr_1fr_2fr] divide-y lg:divide-y-0 lg:divide-x place-content-center">
                             <div className="frontend flex flex-col   ">
 
                                 <h1>Frontend</h1>
