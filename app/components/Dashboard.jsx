@@ -48,7 +48,7 @@ export default function Dashboard({prediction}) {
             </div>
 
 
-            <div className="lg:flex-[1.2] border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-4  min-h-0  overflow-y-auto ">
+            <div className="lg:flex-[1.2] border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-4  h-[200px]  overflow-y-scroll ">
                 <div className="min-w-0">
                     <MetricBars data={data["Linear"]||[]} color="#8B5CF6" />
                 </div>
