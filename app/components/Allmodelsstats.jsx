@@ -1,6 +1,6 @@
-export default function  Allmodelsstats(){
+export default function  Allmodelsstats({prediction}){
     return (
-        <div className="border  flex flex-col bg-[#3A3A3A] rounded-2x p-4 gap-2 min-h-0">
+        <div className="border  flex flex-col bg-[#232B43] rounded-2x p-4 gap-2 min-h-0">
             <h1>All Models</h1>
 
             <div className="flex flex-col gap-4 flex-1 min-h-0 overflow-y-auto no-scrollbar">
@@ -37,8 +37,8 @@ export default function  Allmodelsstats(){
                         <div className="flex items-center">
                             <ul className="list-none flex gap-4 i">
                                 <li>R² 0.94</li>
-                                <li>$18k</li>
-                                <li>$435,000</li>
+                                <li>₹18k</li>
+                                <li>₹{prediction.models["xgboost"].prediction}</li>
                                 <li className="bg-blue-600 rounded-xl text-white text-xl pl-2 pr-2 ">Best</li>
                             </ul>
 
@@ -47,8 +47,8 @@ export default function  Allmodelsstats(){
                 </div>
 
                 {/*other models*/}
-                <div className="flex justify-between w-full p-2 bg-[#2F2F2F] shrink-0">
-                    <div className="flex">
+                <div className="flex justify-between w-full p-2 bg-[#1F2335] shrink-0 text-white rounded-xl">
+                    <div className="flex gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="url(#whiteTrendBg)" viewBox="0 0 24 24" strokeWidth={2} stroke="url(#whiteTrendBorder)" className="w-5 h-5 shrink-0 filter drop-shadow-[0_0_4px_rgba(255,255,255,0.15)]">
                             <defs>
                                 {/* Subtle internal gradient so the arrow isn't completely flat */}
@@ -72,22 +72,22 @@ export default function  Allmodelsstats(){
                         </svg>
 
                         <ul>
-                            <li>Linear</li>
+                            <li>Random Forest</li>
                         </ul>
                     </div>
                     <div>
                         <ul className="list-none flex gap-4 i">
-                            <li>R² 0.94</li>
-                            <li>$24k</li>
-                            <li>$420,000</li>
+                            <li>R² {prediction.models["random_forest"].test_r2}</li>
+                            <li>₹{prediction.models["random_forest"].mae}</li>
+                            <li>₹{prediction.models["random_forest"].prediction}</li>
 
                         </ul>
                     </div>
                 </div>
 
                 {/*random forest info*/}
-                <div className="flex justify-between w-full p-2 bg-[#2F2F2F] shrink-0">
-                    <div className="flex">
+                <div className="flex justify-between w-full p-2 bg-[#1F2335] shrink-0 text-white rounded-xl">
+                    <div className="flex gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="url(#whiteTrendBg)" viewBox="0 0 24 24" strokeWidth={2} stroke="url(#whiteTrendBorder)" className="w-5 h-5 shrink-0 filter drop-shadow-[0_0_4px_rgba(255,255,255,0.15)]">
                             <defs>
                                 {/* Subtle internal gradient so the arrow isn't completely flat */}
@@ -111,22 +111,22 @@ export default function  Allmodelsstats(){
                         </svg>
 
                         <ul>
-                            <li>Linear</li>
+                            <li>Linear Regression</li>
                         </ul>
                     </div>
                     <div>
                         <ul className="list-none flex gap-4 i">
-                            <li>R² 0.94</li>
-                            <li>$24k</li>
-                            <li>$420,000</li>
+                            <li>R² {prediction.models["linear_regression"].test_r2}</li>
+                            <li>₹{prediction.models["linear_regression"].mae}</li>
+                            <li>₹{prediction.models["linear_regression"].prediction}</li>
 
                         </ul>
                     </div>
                 </div>
 
                 {/*ridge info*/}
-                <div className="flex justify-between w-full p-2 bg-[#2F2F2F] shrink-0">
-                    <div className="flex">
+                <div className="flex justify-between w-full p-2 bg-[#1F2335] shrink-0 text-white rounded-xl">
+                    <div className="flex gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="url(#whiteTrendBg)" viewBox="0 0 24 24" strokeWidth={2} stroke="url(#whiteTrendBorder)" className="w-5 h-5 shrink-0 filter drop-shadow-[0_0_4px_rgba(255,255,255,0.15)]">
                             <defs>
                                 {/* Subtle internal gradient so the arrow isn't completely flat */}
@@ -150,22 +150,22 @@ export default function  Allmodelsstats(){
                         </svg>
 
                         <ul>
-                            <li>Linear</li>
+                            <li>Ridge Regression</li>
                         </ul>
                     </div>
                     <div>
                         <ul className="list-none flex gap-4 i">
-                            <li>R² 0.94</li>
-                            <li>$24k</li>
-                            <li>$420,000</li>
+                            <li>R² {prediction.models["ridge"].test_r2}</li>
+                            <li>₹{prediction.models["ridge"].mae}</li>
+                            <li>₹{prediction.models["ridge"].prediction}</li>
 
                         </ul>
                     </div>
                 </div>
 
                 {/*lasso model*/}
-                <div className="flex justify-between w-full p-2 bg-[#2F2F2F] shrink-0">
-                    <div className="flex">
+                <div className="flex justify-between w-full p-2 bg-[#1F2335] shrink-0 text-white rounded-xl">
+                    <div className="flex gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="url(#whiteTrendBg)" viewBox="0 0 24 24" strokeWidth={2} stroke="url(#whiteTrendBorder)" className="w-5 h-5 shrink-0 filter drop-shadow-[0_0_4px_rgba(255,255,255,0.15)]">
                             <defs>
                                 {/* Subtle internal gradient so the arrow isn't completely flat */}
@@ -189,14 +189,14 @@ export default function  Allmodelsstats(){
                         </svg>
 
                         <ul>
-                            <li>Linear</li>
+                            <li>Lasso Regression</li>
                         </ul>
                     </div>
                     <div>
                         <ul className="list-none flex gap-4 i">
-                            <li>R² 0.94</li>
-                            <li>$24k</li>
-                            <li>$420,000</li>
+                            <li>R² {prediction.models["lasso"].test_r2}</li>
+                            <li>₹{prediction.models["lasso"].mae}</li>
+                            <li>₹{prediction.models["lasso"].prediction}</li>
 
                         </ul>
                     </div>
