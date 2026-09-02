@@ -104,21 +104,7 @@ export default function Normalform({setprediction}) {
             <form   onSubmit={handleSubmit}  className="flex flex-col gap-4 sm:gap-8 overflow-y-auto">
 
                 {/* All  Comboboxes and inputs */}
-                <Combobox items={CarNameOptions} value={carvalue} onValueChange={setcarValue}>
-                    <ComboboxInput placeholder="Select brand..." className="p-6"/>
-                    <ComboboxContent>
-                        <ComboboxEmpty>No results found.</ComboboxEmpty>
-                        <ComboboxList>
-                            <ComboboxCollection>
-                                {(item) => (
-                                    <ComboboxItem key={item.value} value={item.value}>
-                                        {item.label}
-                                    </ComboboxItem>
-                                )}
-                            </ComboboxCollection>
-                        </ComboboxList>
-                    </ComboboxContent>
-                </Combobox>
+
 
                 <Combobox items={BrandOptions} value={brand} onValueChange={setbrandValue}>
                     <ComboboxInput placeholder="Select brand..." className="p-6"/>
