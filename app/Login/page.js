@@ -43,7 +43,7 @@ export default  function LoginPage(){
                <div className="titlediv">
                    <div className="flex gap-4 ">
                        <CarIcon   className="w-15 h-15" color="#7C3AED" />
-                       <h1 className="font-bold text-3xl leading-none self-center">
+                       <h1 className="font-bold text-3xl leading-none self-center font-[Poppins]">
                            <span className="text-white">Car</span>
                            <span className="text-purple-500">Sense</span>
                        </h1>
@@ -52,11 +52,11 @@ export default  function LoginPage(){
 
 
                 <div className="intro_container flex flex-col gap-2">
-                    <p className="text-4xl text-white">Welcome Back to</p>
-                    <p  className="text-4xl text-[#7c3AED]">CarSense</p>
+                    <p className="text-4xl text-white font-[Poppins] font-semibold">Welcome Back to</p>
+                    <p  className="text-4xl text-[#7c3AED] font-[Poppins]">CarSense</p>
                     <div className="flex flex-col gap-4 text-2xl">
-                        <p className="text-white">Login to continue predicting car prices</p>
-                        <p className="text-white">and manage your history</p>
+                        <p className="text-white font-[Inter] text-lg">Login to continue predicting car prices</p>
+                        <p className="text-white font-[Inter] text-lg">and manage your history</p>
                     </div>
                 </div>
 
@@ -68,8 +68,8 @@ export default  function LoginPage(){
                        </div>
 
                        <div className="flex flex-col gap-4">
-                           <h1 className="font-bold text-white">Accurate Predictions</h1>
-                           <p className="text-white">Ml models trained on real market data</p>
+                           <h1 className="font-[Inter] font-semibold text-base text-white">Accurate Predictions</h1>
+                           <p className="font-[Inter] text-sm text-[#A1A1AA]">Ml models trained on real market data</p>
                        </div>
 
                    </div>
@@ -81,8 +81,8 @@ export default  function LoginPage(){
                         </div>
 
                         <div className="flex flex-col gap-4">
-                            <h1 className="font-bold text-white">Trusted and Reliable</h1>
-                            <p className="text-white">Data-driven insights you can trust</p>
+                            <h1 className="font-[Inter] font-semibold text-base text-white">Trusted and Reliable</h1>
+                            <p className="font-[Inter] text-sm text-[#A1A1AA]">Data-driven insights you can trust</p>
                         </div>
 
                     </div>
@@ -94,8 +94,8 @@ export default  function LoginPage(){
                         </div>
 
                         <div className="flex flex-col gap-4">
-                            <h1 className="font-bold text-white">Fast & Easy</h1>
-                            <p className="text-white">Get results in just afew clicks</p>
+                            <h1 className="font-bold text-white font-[Inter] font-semibold text-base">Fast & Easy</h1>
+                            <p className="font-[Inter] text-sm text-[#A1A1AA]">Get results in just afew clicks</p>
                         </div>
 
                     </div>
@@ -114,28 +114,28 @@ export default  function LoginPage(){
             </section>
             <section className="flex justify-center items-center flex-1  h-screen bg-[#0B0B14]">
                 <div className="flex  flex-col gap-8  p-10  sm:p-20 border-[#2D2D44] bg-[#141422] rounded-xl">
-                    <h1 className="font-bold lg:text-2xl text-[#F8FAFC]">Log in to Your Account</h1>
-                    <h1 className="lg:text-xl text-[#F8FAFC]">Enter your details to access your account</h1>
+                    <h1 className="lg:text-2xl text-[#F8FAFC] font-[Inter] font-bold">Log in to Your Account</h1>
+                    <h1 className="lg:text-xl  font-[Inter] text-base text-[#A1A1AA]">Enter your details to access your account</h1>
                     <form onSubmit={handlesubmit} className="flex flex-col gap-8 ">
                         {/*<input type="text" placeholder="Enter Username"  value={username} onChange={(e) => setUsername(e.target.value)}/>*/}
                         <div className="flex flex-col gap-4 text-[#F8FAFC]">
-                            <h1 className="lg:text-2xl">Email Address</h1>
-                            <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} className="p-2 w-full border bg-[#1A1A24] rounded-md"/>
+                            <h1 className="lg:text-2xl font-[Inter] font-medium text-base ">Email Address</h1>
+                            <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} className="p-2 w-full border bg-[#1A1A24] rounded-md font-[Inter] text-sm"/>
                         </div>
                         <div className="flex flex-col gap- text-[#F8FAFC]">
-                            <h1 className="lg:text-2xl">Password</h1>
-                            <input type="password" placeholder=" Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} className="p-2 w-full border rounded-md bg-[#1A1A24]"/>
+                            <h1 className="lg:text-2xl font-[Inter] font-medium text-base ">Password</h1>
+                            <input type="password" placeholder=" Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} className="p-2 w-full border rounded-md bg-[#1A1A24] font-[Inter] text-sm"/>
                         </div>
                         <div className="p-2 flex self-center">
-                            <h1 className="lg:text-xl text-purple-900 underline decoration-purple-950">Forgot Password?</h1>
+                            <h1 className="lg:text-xl text-purple-900 underline decoration-purple-950 font-[Inter] font-medium text-sm">Forgot Password?</h1>
                         </div>
 
-                        <input type="submit" value="Login" className="w-full bg-[#7C3AED] p-2 rounded-md"/>
+                        <input type="submit" value="Login" className="w-full bg-[#7C3AED] p-2 rounded-md font-[Inter] font-semibold"/>
                     </form>
 
                     <div className="flex gap-2 self-center">
                         <p className="text-white">Don't have an account ? </p>
-                        <Link href="/Register"  className="text-[#7C3AED]">
+                        <Link href="/Register"  className="text-[#7C3AED] font-[Inter] font-semibold">
                             Register
                         </Link>
                     </div>
