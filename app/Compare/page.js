@@ -25,7 +25,11 @@ export default function Compare() {
 
     const API_URL=process.env.NEXT_PUBLIC_API_URL;
     useEffect(() => {
-        fetch(`${API_URL}/data-pricecomparison`)
+        fetch(`${API_URL}/data-pricecomparison`,
+            {
+                credentials:"include",
+            })
+
             .then(res => res.json())
             .then(data => {
                 setpricedata(data)
@@ -42,7 +46,10 @@ export default function Compare() {
 
     // use effect for model comparison table
     useEffect(() => {
-        fetch( `${API_URL}/data-tabledata`)
+        fetch( `${API_URL}/data-tabledata`,
+            {
+                credentials:"include",
+            })
             .then(res => res.json())
             .then(data => {
                 setModels(data.models)
@@ -52,7 +59,10 @@ export default function Compare() {
 
 
     useEffect(() => {
-        fetch( `${API_URL}/data-feature-importance`)
+        fetch( `${API_URL}/data-feature-importance`,
+            {
+                credentials:"include",
+            })
             .then(res => res.json())
             .then(data => {
                     setFeatureImportance(data)
