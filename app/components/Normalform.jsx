@@ -41,9 +41,19 @@ export default function Normalform({setprediction}) {
         async function fetchInitialData() {
             try {
 
-                const brandRes = await fetch(`${API_URL}/data-brand_names`)
-                const carRes = await fetch( `${API_URL}/data-car_names`)
-                const modelRes=await fetch(`${API_URL}/data-model_names` )
+                const brandRes = await fetch(`${API_URL}/data-brand_names`,
+                    {
+                        credentials: "include",
+                    }
+                    )
+                const carRes = await fetch( `${API_URL}/data-car_names`,
+                    {
+                        credentials: "include",
+                    })
+                const modelRes=await fetch(`${API_URL}/data-model_names` ,
+                    {
+                        credentials: "include",
+                    })
 
                 if (brandRes.ok) setBrandOptions(await brandRes.json())
                 if (carRes.ok) setCarNameOptions(await carRes.json())
@@ -60,7 +70,7 @@ export default function Normalform({setprediction}) {
         e.preventDefault();
 
         const formData = {
-            car_name: carvalue,
+            car_name: brand+" "+modelvalue,
             brand: brand,
             model: modelvalue,
             vehicle_age: Number(vehicleage),
@@ -77,6 +87,7 @@ export default function Normalform({setprediction}) {
             const res = await fetch( `${API_URL}/predict`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
+                credentials: "include",
                 body: JSON.stringify(formData)
             });
 
@@ -89,8 +100,6 @@ export default function Normalform({setprediction}) {
         } catch (err) {
             console.error("Error fetching price prediction:", err);
             alert("An error occurred while connecting to the server.");
-        } finally {
-            setLoading(false);
         }
 
     }
