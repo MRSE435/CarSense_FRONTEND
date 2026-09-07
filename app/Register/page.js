@@ -11,9 +11,42 @@ export default  function LoginPage(){
     const [username,setUsername]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+    const [errors,seterrors]=useState({});
     const API_URL=process.env.NEXT_PUBLIC_API_URL;
+    const validate=()=>{
+    const newerrors={};
+        if (!username.trim())
+        {
+            newerrors["Username"]="Username is required"
+        }
+        if (!email.trim())
+        {
+            newerrors["Email"]="Email is required"
+        }
+        if (!password.trim())
+        {
+            newerrors["Password"]="Password is required"
+        }
+        else if(!email.includes("@") || !email.includes(".")){
+            newerrors["Email"]="Invalid email address"
+        }
+
+        if(password.length<8)
+        {
+            newerrors["Password"]="Minimum 8 characters long"
+        }
+        seterrors(newerrors);
+        return Object.keys(newerrors).length===0;
+    }
+
     const handlesubmit=async (e)=>{
         e.preventDefault();
+
+        const validation=validate();
+        if(!validate)
+        {
+            return ;
+        }
         const Registrationdata={
             Username:username,
             Email:email,
@@ -114,14 +147,23 @@ export default  function LoginPage(){
                             <h1 className="lg:text-2xl font-[Inter] font-medium text-base ">Username</h1>
                             <input type="text" placeholder="Enter Username" value={username}
                                    onChange={(e) => setUsername(e.target.value)} className="p-2 w-full border bg-[#1A1A24] rounded-md font-[Inter] text-sm"/>
+                            {errors.Username &&(
+                                <p className="text-red-800  text:xl ">{errors.Username}</p>
+                            )}
                         </div>
                         <div className="flex flex-col gap-4 text-[#F8FAFC]">
                             <h1 className="lg:text-2xl font-[Inter] font-medium text-base ">Email Address</h1>
                             <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} className="p-2 w-full border bg-[#1A1A24] rounded-md font-[Inter] text-sm"/>
+                            {errors.Email&&(
+                                <p className="text-red-800  text:xl ">{errors.Email}</p>
+                            )}
                         </div>
                         <div className="flex flex-col gap- text-[#F8FAFC]">
                             <h1 className="lg:text-2xl font-[Inter] font-medium text-base ">Password</h1>
                             <input type="password" placeholder=" Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} className="p-2 w-full border rounded-md bg-[#1A1A24] font-[Inter] text-sm"/>
+                            {errors.Password &&(
+                                <p className="text-red-800  text:xl ">{errors.Password}</p>
+                            )}
                         </div>
 
 

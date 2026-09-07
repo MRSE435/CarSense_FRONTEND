@@ -106,7 +106,7 @@ export default  function LoginPage(){
                     alt="Luxury car"
                     width={500}
                     height={400}
-                    className="object-contain"
+                    className="object-contain w-full h-auto"
                 />
 
 

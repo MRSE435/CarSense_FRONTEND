@@ -22,11 +22,15 @@ export default function Navbar() {
                     <li>Best R² 0.947.</li>
                     <li>10k+ Car Records</li>
                 </div>
-                <svg  className="text-sm md:hidden text-black" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="4" y1="8" x2="24" y2="8" stroke="black" stroke-width="2.5" stroke-linecap="round" />
-                    <line x1="4" y1="14" x2="24" y2="14" stroke="black" stroke-width="2.5" stroke-linecap="round" />
-                    <line x1="4" y1="20" x2="24" y2="20" stroke="black" stroke-width="2.5" stroke-linecap="round" />
-                </svg>
+                <div className="relative">
+                    <div className="bg-red-500 w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full overflow-hidden">
+
+                    </div>
+                    <div className="absolute w-[500px] h-[900px] bg-green-400 mt-2 top-full right-0">
+
+                    </div>
+                </div>
+
             </div>
         </nav>
     );
