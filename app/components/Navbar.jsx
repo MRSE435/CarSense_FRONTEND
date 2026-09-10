@@ -1,11 +1,21 @@
 import Link from "next/link";
-import ProfileIcon from "@/app/components/carsense_profileicons/ProfileIcon";
-import CompareIcon from "@/app/components/carsense_profileicons/CompareIcon";
-import ChevronRightIcon from "@/app/components/carsense_profileicons/ChevronRightIcon";
-import HistoryIcon from "@/app/components/carsense_profileicons/HistoryIcon";
-import SettingsIcon from "@/app/components/carsense_profileicons/SettingsIcon";
-import LogoutIcon from "./carsense_profileicons/LogoutIcon";
+import DropdownMenue from "@/app/components/DropdownMenue";
+import {useEffect, useRef, useState} from "react";
+
 export default function Navbar() {
+    const dropdownref=useRef(null);
+    const [isopen,setisopen] = useState(false);
+    const handleclickoutside=(e)=>{
+        if(dropdownref.current && !dropdownref.current.contains(e.target)){
+            setisopen(false)
+        }
+    }
+    useEffect(()=>{
+        document.addEventListener("mousedown",handleclickoutside);
+        return () => {
+            document.removeEventListener("mousedown",handleclickoutside);
+        }
+    },[])
     return (<nav
             className="flex relative z-50  bg-[#3E3788] lg:p-4 lg:pb-2 text-2xl  p-2     justify-between  border-b-white pb-0">
             <div className="flex gap-4">
@@ -40,60 +50,14 @@ export default function Navbar() {
                     <li>Best R² 0.947.</li>
                     <li>10k+ Car Records</li>
                 </div>
-                <div className="relative">
+                <div className="relative" ref={dropdownref}>
                     <div
-                        className="bg-red-500 w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full overflow-hidden">
+                       onClick={()=>{setisopen(true)}}   className="bg-red-500 w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full overflow-hidden">
 
                     </div>
-                    <div className="absolute  bg-[#1E293B] rounded-xl mt-2 top-full right-0 w-72 p-6">
-                        <div className="userinfo flex justify-around gap-6 border-b border-gray-500 p-4">
-                            <div className="bg-[#3882F6] p-4 rounded-full shrink-0 w-12 h-12 flex justify-center items-center ">
-                                <p>MO</p>
-                            </div>
-                            <div className="flex flex-col self-center">
-                                <p className="text-xl  text-[#F8FAFC] whitespace-nowrap">Mohammed Owais</p>
-                                <p className="text-xl text-[#94A3B8]">owais@gmail.com</p>
-                            </div>
 
-                        </div>
+                    {isopen &&  (<DropdownMenue />)}
 
-
-                        <div className="flex flex-col gap-2">
-                            <div className="profile flex justify-between">
-                                <div className="flex gap-2">
-                                    <ProfileIcon  className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-slate-300 lg:text-white"/>
-                                    <p>Profile</p>
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-slate-300 lg:text-white"/>
-                            </div>
-
-                            <div className="profile flex justify-between">
-                                <div className="flex gap-2">
-                                    <HistoryIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-slate-300 lg:text-white"/>
-                                    <p>Prediction History</p>
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-slate-300 lg:text-white"/>
-                            </div>
-
-                            <div className="profile flex justify-between">
-                                <div className="flex gap-2">
-                                    <SettingsIcon  className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-slate-300 lg:text-white"/>
-                                    <p>Settings</p>
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-slate-300 lg:text-white"/>
-                            </div>
-
-                            <div className="w-[80%] h-px bg-gray-700 mx-auto"></div>
-
-                            <div className="flex gap-4">
-                                <LogoutIcon className="  sm:w-5 sm:h-5 lg:w-8 lg:h-8 text-red-500"/>
-                                <p className="text-red-500">Logout</p>
-                            </div>
-
-                        </div>
-
-
-                    </div>
                 </div>
 
             </div>
