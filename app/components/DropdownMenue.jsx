@@ -7,23 +7,50 @@ import LogoutIcon from "./carsense_profileicons/LogoutIcon";
 import PredictIcon from "./carsense_profileicons/PredictIcon";
 import HomeIcon from "@/app/components/carsense_profileicons/HomeIcon";
 import AboutIcon from "@/app/components/carsense_profileicons/AboutIcon";
-
+const API_URL=process.env.NEXT_PUBLIC_API_URL;
 import Link from "next/link";
+import {useRouter} from "next/navigation";
+import {useEffect, useState} from "react";
 
 export default function DropdownMenue(){
+   const router=useRouter();
+   const [Userinfo,setUserinfo]=useState({});
+    const logout=async()=> {
+        const response = await fetch(`${API_URL}/logout`, {
+            method: "POST",
+            credentials: "include",
+        })
+        if (response.status === 200) {
+            router.push("/Login")
+        }
+    }
 
 
+    const userinfo=async ()=>{
+        const response=await fetch(`${API_URL}/userinfo`, {
+            method: "GET",
+            credentials: "include",
+        })
+        if(response.status === 200){
+           const data=await response.json();
+           console.log("userinfo",data)
+           setUserinfo(data);
+        }
+    }
 
+    useEffect(() => {
+        userinfo();
+    }, []);
     return(
         <>
             <div className="absolute  bg-[#1E293B] rounded-xl mt-2 top-full right-0 w-72 p-6">
                 <div className="userinfo flex justify-around gap-6 border-b border-gray-500 p-4">
                     <div className="bg-[#3882F6] p-4 rounded-full shrink-0 w-12 h-12 flex justify-center items-center ">
-                        <p>MO</p>
+                        <p>{Userinfo["Username"]?.[0]?.toUpperCase()}</p>
                     </div>
                     <div className="flex flex-col self-center">
-                        <p className="text-xl  text-[#F8FAFC] whitespace-nowrap">Mohammed Owais</p>
-                        <p className="text-xl text-[#94A3B8]">owais@gmail.com</p>
+                        <p className="text-xl  text-[#F8FAFC] whitespace-nowrap">{Userinfo["Username"]}</p>
+                        <p className="text-xl text-[#94A3B8]">{Userinfo["Email"]}</p>
                     </div>
 
                 </div>
@@ -102,7 +129,7 @@ export default function DropdownMenue(){
 
                     <div className="w-[80%] h-px bg-gray-700 mx-auto"></div>
 
-                    <div className="flex gap-4">
+                    <div onClick={()=>{logout()}} className="flex gap-4 rounded-lg hover:bg-[#1F3554] hover:text-blue-400  transition-colors duration-200 hover:p-2">
                         <LogoutIcon className="  sm:w-5 sm:h-5 lg:w-8 lg:h-8 text-red-500"/>
                         <p className="text-red-500">Logout</p>
                     </div>

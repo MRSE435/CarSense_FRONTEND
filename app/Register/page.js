@@ -127,11 +127,11 @@ export default  function LoginPage(){
                 </div>
 
                 <Image
-                    src="/car-login.png"
+                    src="/car-register.png"
                     alt="Luxury car"
                     width={500}
                     height={400}
-                    className="object-contain"
+                    className="object-contain w-full h-auto"
                 />
 
 

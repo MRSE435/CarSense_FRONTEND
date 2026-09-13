@@ -149,19 +149,19 @@ export default function Normalform({setprediction}) {
 
                 <div className="w-full flex  gap-4 justify-between">
                     <div className=" flex-1 flex flex-col gap-4">
-                        <h1>Vehicle Age</h1>
+                        <h1 className="text-white">Vehicle Age</h1>
                         <input name="vehicle_age"     value={vehicleage}
-                               onChange={(e) => setvehicleage(e.target.value)}  type="number" min="0" max="100" step="1" className="p-3 border"/>
+                               onChange={(e) => setvehicleage(e.target.value)}  type="number" min="0" max="100" step="1" className="p-3 border text-white"/>
                     </div>
                     <div className="flex-1 flex flex-col gap-4">
-                        <h1>KM</h1>
+                        <h1 className="text-white">KM</h1>
                         <input name="km_driven"    value={km_driven}
-                               onChange={(e) => setkm_driven(e.target.value)}type="number" min="0" max="10000000" step="1" className="p-3 border"/>
+                               onChange={(e) => setkm_driven(e.target.value)}type="number" min="0" max="10000000" step="1" className="p-3 border text-white"/>
                     </div>
 
                 </div>
 
-                <select className="p-4 border " value={fuelType}
+                <select className="p-4 border text-white " value={fuelType}
                         onChange={(e) => setfuelType(e.target.value)}>
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>
@@ -173,8 +173,8 @@ export default function Normalform({setprediction}) {
 
                 <div className="w-full flex  gap-4 justify-between">
                     <div className=" flex-1 flex flex-col gap-4">
-                        <h1>Transmission</h1>
-                        <select className="p-4 border"   value={TransmissionType}
+                        <h1 className="text-white">Transmission</h1>
+                        <select className="p-4 border text-white"   value={TransmissionType}
                                 onChange={(e) => setTransmissionType(e.target.value)}>
                             <option value="Manul">Manual</option>
                             <option value="Automatic">Automatic</option>
@@ -182,10 +182,10 @@ export default function Normalform({setprediction}) {
                     </div>
 
                     <div className=" flex-1 flex flex-col gap-4">
-                        <h1>
+                        <h1 className="text-white">
                             Owner Type
                         </h1>
-                        <select className="p-4 border"   value={OwnerType}
+                        <select className="p-4 border text-white"   value={OwnerType}
                                 onChange={(e) => setOwnerType(e.target.value)}>
                             <option value="Individual">Individual</option>
                             <option value="Dealer">Dealer</option>
@@ -197,23 +197,23 @@ export default function Normalform({setprediction}) {
 
                 <div className="w-full flex  gap-4 justify-between">
                     <div className=" flex-1 flex flex-col gap-4">
-                        <h1>Engine CC</h1>
+                        <h1 className="text-white">Engine CC</h1>
                         <input type="number"   value={engine}
-                               onChange={(e) => setengine(e.target.value)}min="0" max="10000" step="1" className="p-3 border"/>
+                               onChange={(e) => setengine(e.target.value)}min="0" max="10000" step="1" className="p-3 border text-white"/>
                     </div>
                     <div className="flex-1 flex flex-col gap-4">
-                        <h1>Max Power</h1>
+                        <h1 className="text-white">Max Power</h1>
                         <input type="number"  value={max_power}
-                               onChange={(e) => setmax_power(e.target.value)} min="0" max="10000000" step="1" className="p-3 border"/>
+                               onChange={(e) => setmax_power(e.target.value)} min="0" max="10000000" step="1" className="p-3 border text-white"/>
                     </div>
 
                 </div>
 
 
                 <div>
-                    <h1>Mileage</h1>
+                    <h1 className="text-white">Mileage</h1>
                     <input type="number"  value={mileage}
-                           onChange={(e) => setmileage(e.target.value)}min="0" max="5000" step="1" className="p-3 border w-full"/>
+                           onChange={(e) => setmileage(e.target.value)}min="0" max="5000" step="1" className="p-3 border w-full text-white"/>
                 </div>
 
 

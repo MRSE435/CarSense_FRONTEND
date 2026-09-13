@@ -1,15 +1,26 @@
+
+
+
+
+    "use client";
 import Link from "next/link";
 import DropdownMenue from "@/app/components/DropdownMenue";
 import {useEffect, useRef, useState} from "react";
-
+import { useRouter } from "next/navigation";
 export default function Navbar() {
     const dropdownref=useRef(null);
     const [isopen,setisopen] = useState(false);
+
     const handleclickoutside=(e)=>{
         if(dropdownref.current && !dropdownref.current.contains(e.target)){
             setisopen(false)
         }
     }
+
+
+
+
+
     useEffect(()=>{
         document.addEventListener("mousedown",handleclickoutside);
         return () => {
@@ -52,7 +63,7 @@ export default function Navbar() {
                 </div>
                 <div className="relative" ref={dropdownref}>
                     <div
-                       onClick={()=>{setisopen(true)}}   className="bg-red-500 w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full overflow-hidden">
+                       onClick={()=>{setisopen(prev =>!prev)}}   className="bg-red-500 w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full overflow-hidden">
 
                     </div>
 
@@ -61,5 +72,6 @@ export default function Navbar() {
                 </div>
 
             </div>
-        </nav>);
+        </nav>)
+
 }
