@@ -11,7 +11,7 @@ export default function Home() {
             {/*<div  className="w-screen h-screen hidden bg-blue-950 "></div>*/}
             <div className={`w-full flex flex-col lg:flex-row lg:h-screen  ${!prediction?"lg:justify-center lg:items-center":""}   bg-[#0F111A]`}>
 
-                <div className={`w-full ${!prediction?"lg:w-[50%] lg:rounded-xl":"lg:w-[20%]"}  bg-[#1C1E37] p-4 `}>
+                <div className={`w-full ${!prediction?"lg:w-[50%] lg:rounded-xl":"lg:w-[20%]"}  bg-[#1C1E37] p-8 `}>
                     <Normalform setprediction={setprediction}/>
                 </div>
 
