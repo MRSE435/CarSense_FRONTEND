@@ -1,5 +1,5 @@
 "use client"
-import {useState} from "react";
+import {useState,Suspense} from "react";
 import {useSearchParams} from "next/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import Image from "next/image";
 import TrendingUp from "@/app/components/Svgfolder/TrendingUp";
 import Lightning from "@/app/components/Svgfolder/Lightning"
 import ShieldIcon from "@/app/components/Svgfolder/ShieldIcon";
-export default  function LoginPage(){
+function LoginContent(){
     const [username,setUsername]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
@@ -145,4 +145,13 @@ export default  function LoginPage(){
 
         </main>
     )
+}
+
+export default  function LoginPage() {
+    return(
+        <Suspense>
+            <LoginContent />
+        </Suspense>
+        )
+
 }
