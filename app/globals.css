@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+/* ADD THESE EXPLICIT SOURCE PATHS FOR PRODUCTION BUILDS */
+@source "./app";
+@source "./components";
+
 
 @custom-variant dark (&:is(.dark *));
 
