@@ -129,8 +129,8 @@ export default function DropdownMenue(){
 
                     <div className="w-[80%] h-px bg-gray-700 mx-auto"></div>
 
-                    <div onClick={()=>{logout()}} className="flex gap-4 rounded-lg hover:bg-[#1F3554] hover:text-blue-400  transition-colors duration-200 hover:p-2">
-                        <LogoutIcon className="  sm:w-5 sm:h-5 lg:w-8 lg:h-8 text-red-500"/>
+                    <div onClick={()=>{logout()}} className="flex gap-4 rounded-lg hover:bg-[#1F3554] hover:text-blue-400  transition-colors duration-200 hover:p-2 items-center">
+                        <LogoutIcon className="w-5 h-5 shrink-0 text-red-500"/>
                         <p className="text-red-500">Logout</p>
                     </div>
 

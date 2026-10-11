@@ -8,12 +8,13 @@ import TrendingUp from "@/app/components/Svgfolder/TrendUp";
 import Database from "@/app/components/Svgfolder/Database";
 import Cube from "@/app/components/Svgfolder/Cube";
 import TargetIcon from "./components/Svgfolder/TargetIcon";
+import Link from "next/link";
 export default function Home() {
    return(
 <>
            <Navbar />
 
-           <div className="w-full flex flex-col  ">
+           <div className="w-full flex flex-col min-h-screen bg-[#0D0D17] ">
                    <div className="flex flex-col md:flex-row   ">
                       <div className="flex flex-1   h-full bg-[#0D0D17] p-8 ">
                                 <div className="flex flex-col gap-4 p-4">
@@ -24,13 +25,18 @@ export default function Home() {
                                     <h1 className="text-white text-lg font-normal text-zinc-300">advanced machine learning models trained  on</h1>
                                     <h1 className="text-white text-lg font-normal text-zinc-300"> 10,000+ real car records</h1>
                                     <div className="flex gap-2 mt-4">
-                                        <button className="text-white text-xl rounded-xl lg:text-2xl bg-[#8B5CF6] p-2 pr-4 pl-4 flex self-center gap-1 "><PredictIcon className="  w-8 h-8 text-white"/> Predict Car Price</button>
-                                        <button className="text-white text-xl rounded-xl lg:text-2xl bg-[#8B5CF6] p-2 pr-4 pl-4 flex self-center gap-1 "> <TrendingUp className="text-white w-8 h-8"/>Compare Models</button>
+                                        <Link href="/Predict">
+                                            <button className="text-white text-xl rounded-xl lg:text-2xl bg-[#8B5CF6] p-2 pr-4 pl-4 flex self-center gap-1 "><PredictIcon className="  w-8 h-8 text-white"/> Predict Car Price</button>
+                                        </Link>
+                                       <Link href="/Compare">
+                                           <button className="text-white text-xl rounded-xl lg:text-2xl bg-[#8B5CF6] p-2 pr-4 pl-4 flex self-center gap-1 "> <TrendingUp className="text-white w-8 h-8"/>Compare Models</button>
+                                       </Link>
+
                                     </div>
 
                                 </div>
                       </div>
-                       <div className="lg:flex-2  flex-1 flex justify-center items-center bg-[#0D0D17]">
+                       <div className=" flex-1 flex justify-center items-center bg-[#0D0D17]">
                            <img
                                src="/car.png"
                                alt="Car"
@@ -52,11 +58,11 @@ export default function Home() {
                                  <div className="border  rounded-xl border-[#2A2D4F] p-8 flex  flex-col gap-4 justify-center items-center w-full">
                                      <div className="flex gap-4 lg:gap-8 justify-between">
                                          <div className="bg-[#0F1220] p-4 rounded-full shadow-lg border  border-[#5A42C8]">
-                                             <TargetIcon  className=" w-10 h-10  lg:w-20 lg:h-20 text-[#3C0366]"/>
+                                             <Database  className=" w-10 h-10  lg:w-20 lg:h-20 text-[#3C0366]"/>
                                          </div>
                                          <div className="flex flex-col gap-2 ">
                                              <h1 className="text-4xl md:text-5xl  ">10,000+</h1>
-                                             <h1 className="text-2xl">Car Records</h1>
+                                             <h1 className="text-2xl text-[#5A42C8]">Car Records</h1>
                                          </div>
 
                                      </div>
@@ -72,17 +78,17 @@ export default function Home() {
                                  <div className="border  rounded-xl border-[#2A2D4F] p-8 flex  flex-col gap-4 justify-center items-center w-full">
                                      <div className="flex gap-4 lg:gap-8 justify-between">
                                          <div className="bg-[#0F1220] p-4 rounded-full shadow-lg border  border-[#5A42C8]">
-                                             <TargetIcon  className=" w-10 h-10  lg:w-20 lg:h-20 text-[#3C0366]"/>
+                                             <Cube className=" w-10 h-10  lg:w-20 lg:h-20 text-[#3C0366]"/>
                                          </div>
                                          <div className="flex flex-col gap-2 ">
-                                             <h1 className="text-4xl md:text-5xl  ">10,000+</h1>
-                                             <h1 className="text-2xl">Car Records</h1>
+                                             <h1 className="text-4xl md:text-5xl  ">5</h1>
+                                             <h1 className="text-2xl text-[#5A42C8]">ML Models</h1>
                                          </div>
 
                                      </div>
 
-                                     <p className="text-2xl">High quality datasets
-                                         with real market records</p>
+                                     <p className="text-2xl">Trained and evaluated
+                                         for best performance</p>
                                  </div>
 
                              </div>
@@ -94,14 +100,17 @@ export default function Home() {
                                              <TargetIcon  className=" w-10 h-10  lg:w-20 lg:h-20 text-[#3C0366]"/>
                                          </div>
                                          <div className="flex flex-col gap-2 ">
-                                             <h1 className="text-4xl md:text-5xl  ">10,000+</h1>
-                                             <h1 className="text-2xl">Car Records</h1>
+                                             <h1 className="text-4xl md:text-5xl  ">0.94</h1>
+                                             <h1 className="text-2xl text-[#5A42C8]">Best R² Score</h1>
                                          </div>
 
                                      </div>
 
-                                     <p className="text-2xl">High quality datasets
-                                         with real market records</p>
+                                     <p className="text-2xl ">
+                                         Achieved by XGBoost
+                                         <br />
+                                         model on test set
+                                     </p>
                                  </div>
 
                              </div>
@@ -116,17 +125,17 @@ export default function Home() {
                                  <div className="border  rounded-xl border-[#2A2D4F] p-8 flex  flex-col gap-4 justify-center items-center w-full">
                                      <div className="flex gap-4 lg:gap-8 justify-between">
                                          <div className="bg-[#0F1220] p-4 rounded-full shadow-lg border  border-[#5A42C8]">
-                                             <TargetIcon  className=" w-10 h-10  lg:w-20 lg:h-20 text-[#3C0366]"/>
+                                             <TrendingUp  className=" w-10 h-10  lg:w-20 lg:h-20 text-[#3C0366]"/>
                                          </div>
                                          <div className="flex flex-col gap-2 ">
-                                             <h1 className="text-4xl md:text-5xl  ">10,000+</h1>
-                                             <h1 className="text-2xl">Car Records</h1>
+                                             <h1 className="text-4xl md:text-5xl  ">₹91,985</h1>
+                                             <h1 className="text-2xl text-[#5A42C8]">Lowest MAE</h1>
                                          </div>
 
                                      </div>
 
-                                     <p className="text-2xl">High quality datasets
-                                         with real market records</p>
+                                     <p className="text-2xl">Best model performance
+                                         with lowest error</p>
                                  </div>
 
                              </div>
